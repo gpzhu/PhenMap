@@ -28,6 +28,8 @@
 
     glb <- ne_countries(scale = "medium", returnclass = "sp")
 
+
+    ######################################################################################
     #### Mapping number of generation based on basal temperature and growing degree days
 
     # DVD0 basal temperature/low threshold development temperature, based on which insect start to develop
@@ -38,6 +40,8 @@
 
     gen<-Gen(DVD0=10, GDD=60, stk=tavg) ##This is the parameter of coding moth
 
+    
+    ##################################################################
     #### Mapping emergence date of insect after overwintering
 
     # tasmax stack raster of grid daily maximum temperature, SpatRaster object (1-365 days basis)
@@ -47,9 +51,13 @@
     # DVD0 basal temperature/low threshold development temperature, based on which insect start to develop
 
     # GDD growing degree days of egg to adult
+    
 
     emg<-emerg(DVD0=10, GDD=60, tasmax=tmax, tasmin=tmin) ##This is the parameter of coding moth
 
+
+    
+    ###########################################################
     ## Plot of number of generation
 
     plot(gen)
