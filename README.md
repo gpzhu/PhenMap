@@ -1,4 +1,4 @@
-## install and loading packages
+    ## install and loading packages
 
     library(devtools)
 
@@ -66,13 +66,13 @@
     ## 
     ##     countries110
 
-## read system file in phenMap package
+    ## read system file in phenMap package
 
     tmax <-rast(system.file("extdata", "tmax.tif", package="phenMap"))
     tmin <-rast(system.file("extdata", "tmin.tif", package="phenMap"))
     tavg<-rast(system.file("extdata", "tavg.tif", package="phenMap"))
 
-### read globe polygon map
+    ### read globe polygon map
 
     glb <- ne_countries(scale = "medium", returnclass = "sp")
 
@@ -83,38 +83,38 @@
     ## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
     ## generated.
 
-#### Mapping number of generation based on basal temperature and growing degree days
+    #### Mapping number of generation based on basal temperature and growing degree days
 
-# DVD0 basal temperature/low threshold development temperature, based on which insect start to develop
+    # DVD0 basal temperature/low threshold development temperature, based on which insect start to develop
 
-# GDD growing degree days of egg to adult
+    # GDD growing degree days of egg to adult
 
-# stk, which is stack raster of grid daily mean temperature, SpatRaster object (1-365 days basis)
-
-    gen<-Gen(DVD0=10, GDD=60, stk=tavg) ##This is the parameter of coding moth
+    # stk, which is stack raster of grid daily mean temperature, SpatRaster object (1-365 days basis)
 
     gen<-Gen(DVD0=10, GDD=60, stk=tavg) ##This is the parameter of coding moth
 
-#### Mapping emergence date of insect after overwintering
+    gen<-Gen(DVD0=10, GDD=60, stk=tavg) ##This is the parameter of coding moth
 
-# tasmax stack raster of grid daily maximum temperature, SpatRaster object (1-365 days basis)
+    #### Mapping emergence date of insect after overwintering
 
-# tasmin stack raster of grid daily minimum temperature, SpatRaster object (1-365 days basis)
+    # tasmax stack raster of grid daily maximum temperature, SpatRaster object (1-365 days basis)
 
-# DVD0 basal temperature/low threshold development temperature, based on which insect start to develop
+    # tasmin stack raster of grid daily minimum temperature, SpatRaster object (1-365 days basis)
 
-# GDD growing degree days of egg to adult
+    # DVD0 basal temperature/low threshold development temperature, based on which insect start to develop
+
+    # GDD growing degree days of egg to adult
 
     emg<-emerg(DVD0=10, GDD=60, tasmax=tmax, tasmin=tmin) ##This is the parameter of coding moth
 
-## Plot of number of generation
+    ## Plot of number of generation
 
     plot(gen)
     plot(glb,add=T)
 
 ![](phenMap_files/figure-markdown_strict/unnamed-chunk-7-1.png)
 
-## Plot of emergence date
+    ## Plot of emergence date
 
     plot(emg)
     plot(glb,add=T)
