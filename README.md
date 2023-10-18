@@ -38,6 +38,7 @@
 
     # stk, which is stack raster of grid daily mean temperature, SpatRaster object (1-365 days basis)
 
+
     gen<-Gen(DVD0=10, GDD=60, stk=tavg) ##This is the parameter of coding moth
 
     
