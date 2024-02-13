@@ -62,13 +62,13 @@
     ## Plot of number of generation
 
     plot(gen)
-    plot(glb,add=T)
+    plot(st_geometry(glb),add=T)
 
 ![](phenMap_files/figure-markdown_strict/unnamed-chunk-7-1.png)
 
     ## Plot of emergence date
 
     plot(emg)
-    plot(glb,add=T)
+    plot(st_geometry(glb),add=T)
 
 ![](phenMap_files/figure-markdown_strict/unnamed-chunk-8-1.png)
