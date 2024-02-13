@@ -26,7 +26,7 @@
 
     ### read globe polygon map
 
-    glb <- ne_countries(scale = "medium", returnclass = "sp")
+    glb <- ne_countries(scale = "medium", returnclass = "sf")
 
 
     ######################################################################################
